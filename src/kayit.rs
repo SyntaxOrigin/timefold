@@ -417,6 +417,8 @@ mod tests {
 
     #[test]
     fn bilinmeyen_degisim_turu_cozumlenmiyor() {
+        // `tur` artık **kayıt türü** alanıdır; ayraç `cesit` olmalıdır. Eski
+        // biçimde yazılmış bir satır sessizce yorumlanmamalı, hata vermelidir.
         let metin = r#"{"tur":"uydurma","yol":"a"}"#;
         assert!(serde_json::from_str::<Degisim>(metin).is_err());
     }
